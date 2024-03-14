@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>WebP</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
 <style>
@@ -72,13 +72,13 @@
     }
 
     ::-webkit-scrollbar {
-        width: 10px; /* ширина для вертикального скролла */
+        width: 15px; /* ширина для вертикального скролла */
         height: auto; /* высота для горизонтального скролла */
-        background-color: #361c73;
+        background-color: #3b2a63;
     }
 
     ::-webkit-scrollbar-thumb {
-        background: #7031cd;
+        background: #7933e1;
         border-radius: 10px;
     }
 
@@ -87,6 +87,7 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 15px;
+        color: #ffffff;
     }
 
 
@@ -183,9 +184,9 @@
         height: 50px;
         top: -50%;
         left: 10%;
-        background-color: #FFBE0B;
-        z-index: -1;
-        border-radius: 50px;
+        background-color: #d1a625;
+        z-index: 1;
+        border-radius: 100px;
         filter: blur(25px);
         opacity: 0;
         transition: opacity .2s linear;
@@ -297,15 +298,15 @@
     /*Forma*/
 
     .forma{
-        border-radius: 18px;
-        border: 1px solid #626276;
+        border-radius: 10px;
+        border: 0px solid #e8e8e8;
         padding: 5px;
         display: flex;
         justify-content: space-between;
     }
 
     .power__forma{
-        width: 90%;
+        width: 33%;
         margin-bottom: 35px;
     }
 
@@ -317,7 +318,7 @@
 
     .forma__input{
         font-size: 13px;
-        color: #FFFFFF;
+        color: #d3d1d1;
         border: 1px solid transparent;
         padding: 15px 50px 15px 15px;
         border-radius: 10px;
@@ -328,6 +329,13 @@
     .forma__button:hover{
         box-shadow:none;
     }
+    
+    .power__item-text-forma{
+        font-size: 20px;
+        color: #d3d1d1;
+        margin-left: 10px;
+    }
+
 
     /*Avaliable*/
     .power-available__list{
@@ -523,10 +531,6 @@
     }
 
     /*-----------------------------*/
-
-
-
-
 
     /*build*/
     .build{
@@ -729,7 +733,7 @@
     .product-avaliable__subject:before{
         content: "";
         position: absolute;
-        background: url('images/icons/check-mark-icon.png') center no-repeat;
+        background: url('/src/main/resources/images/icons/check-mark-icon.png') center no-repeat;
         background-size: cover;
         width: 30px;
         height: 30px;
@@ -780,8 +784,8 @@
 
     .contact__forma{
         width: 50%;
-        display: flex;
-        margin: 0 auto;
+        display: inline;
+        margin:  auto;
     }
 
     /*Footer*/
@@ -791,7 +795,7 @@
 
         width: 100%;
         max-width: 1200px;
-        margin: 0 auto;
+        margin:  auto;
         padding: 0 15px 10px 15px;
     }
 
@@ -807,14 +811,6 @@
     .footer-social__item:hover svg path{
         fill: #ffffff;
     }
-
-
-
-
-
-
-
-
 
 
     /*--------------------*/
@@ -1979,7 +1975,7 @@
 </style>
 <header class="header">
     <a class="header__logo logo">
-        <img src="photos site/icons/logo.png" width="125" height="40" alt="Shopiy logo">
+        <img src="/src/main/resources/images/icons/Remove-bg.ai_1710442664805.png" width="150" height="110" alt="Web logo">
     </a>
 
     <div class="burger-menu">
@@ -1989,108 +1985,57 @@
     </div>
 
     <nav class="header-navigation navigation">
-
-        <button class="close__button">Close</button>
-
         <ul class="header-navigation__list navigation__list">
             <li class="header-navigation__item navigation__item">
-                <a class="header-navigation__link navigation__link" href="#">About</a>
+                <a class="header-navigation__link navigation__link" href="#">Главная</a>
             </li>
 
             <li class="header-navigation__item navigation__item">
-                <a class="header-navigation__link navigation__link" href="#">Product</a>
+                <a class="header-navigation__link navigation__link" href="#">Последние работы</a>
             </li>
 
             <li class="header-navigation__item navigation__item">
-                <a class="header-navigation__link navigation__link" href="#">Service</a>
+                <a class="header-navigation__link navigation__link" href="#">Добавить проект</a>
             </li>
 
             <li class="header-navigation__item navigation__item">
-                <a class="header-navigation__link navigation__link" href="#">Contact</a>
+                <a class="header-navigation__link navigation__link" href="#">Поддержка</a>
             </li>
         </ul>
 
         <div class="header-user">
-            <button class="user__sign-button button" type="button"> <a href="/regMain"> Sign in </a></button>
-            <button class="user__free-button button" type="button">Try Free</button>
+            <button class="user__sign-button button" type="button" onclick="window.location.href='./regMain.html'">Регистрация</button>
         </div>
     </nav>
 </header>
 <main class="main">
     <section class="power container">
-        <div class="power__text-content">
-            <img class="power__cube" src="photos site/icons/cube-icon.svg" alt="Cube">
-            <div class="power__text-content__inner">
-                <div class="section-header section-power">
-                    <p class="section-header__suptitle power__garante">100% SATISFIED GUARANTEE</p>
-                    <h1 class="section-header__subject power__subject">Power up your shopify products</h1>
-                    <p class="section-header__subtitle power__suptitle">More than 90,000+ companies trust our business. Get help from a dedicated shopify developer today.</p>
-                </div>
-
-                <form class="power__forma forma" action="#" method="post">
-                    <div class="input__wrapper">
-
-                        <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.04297 6.99915C3.04297 6.42846 3.52738 5.96582 4.12494 5.96582H28.8749C29.4725 5.96582 29.9569 6.42846 29.9569 6.99915V23.4679C29.9569 24.0044 29.7298 24.5155 29.3316 24.8896C28.934 25.2631 28.3984 25.47 27.8437 25.47H5.15619C4.60145 25.47 4.06589 25.2631 3.66826 24.8896C3.27003 24.5155 3.04297 24.0045 3.04297 23.4679V6.99915ZM5.2069 8.03249V23.4033H27.793V8.03249H5.2069Z" fill="#868695"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.32138 6.3072C3.72152 5.88336 4.40567 5.84956 4.84947 6.23172L16.4999 16.2641L28.1504 6.23172C28.5942 5.84956 29.2784 5.88336 29.6785 6.3072C30.0787 6.73105 30.0433 7.38445 29.5995 7.76661L17.2245 18.4229C16.8128 18.7774 16.1871 18.7774 15.7754 18.4229L3.40042 7.76661C2.95662 7.38445 2.92124 6.73105 3.32138 6.3072Z" fill="#868695"></path>
-                        </svg>
-
-                        <input class="power__input forma__input" type="email" placeholder="Your email address">
+            <div class="power__text-content">
+                <img class="power__cube" src="/src/main/resources/images/icons/cube-icon.svg" alt="Cube">
+                <div class="power__text-content__inner">
+                    <div class="section-header section-power">
+                        <h1 class="section-header__subject power__subject">Попробуйте создать свое первое портфолио!</h1>
+                        <p class="section-header__subtitle power__suptitle">Более 10 000 пользователей доверяют нашему сайту <br> Попробуйте создать свое уникальное портфолио уже сегодня.</p>
                     </div>
 
-                    <button class="forma__button button" type="button">Sign up</button>
-                </form>
-
-                <ul class="power-available__list">
-                    <li class="power-available__item">
-                        <img src="photos site/icons/check-mark-icon.png" width="30" height="30" alt="Check mark">
-                        <p class="power__item-text">30 days free trial</p>
-                    </li>
-
-                    <li class="power-available__item">
-                        <img src="photos site/icons/check-mark-icon.png" width="30" height="30" alt="Check mark">
-                        <p class="power__item-text">No credit card required</p>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-
-        <div class="power__pictures-wrapper">
-            <img class="power__illustration" src="/images/illustration/mean-foto.png" alt="Photo of a man">
-            <img class="power__triangle" src="/images/icons/triangle-icon.png" alt="Triangle">
-            <img class="power__cubeTwo" src="/images/icons/cube-icon.svg" alt="Cube">
-
-            <div class="power__interesting">
-                <img class="power__interesting-foto" src="/images/illustration/margaret-philips-foto.png" width="153" height="233" alt="Margaret Philips foto">
-
-                <div class="power__interesting-content">
-                    <div class="power__interesting-text">
-                        <h3 class="power__interesting-name">Margaret Philips</h3>
-                        <p class="power__interesting-suptitle">Watch our best services</p>
-                    </div>
-
-                    <a class="power__play-video" href="#">
-                        <img src="photos site/icons/play-icon.png" width="45" height="45" alt="Play button">
-                    </a>
+                    <p>Присоединяйтесь к нам и начните работу прямо сейчас!</p>
+                    <form class="power__forma forma" action="#" method="post">
+                        <button class="forma__button button" type="button" onclick="window.location.href='./regMain.html'">Попробовать</button>
+                    </form>
                 </div>
-
             </div>
 
-            <div class="power__progress">
-                <img class="power__progress-icon" src="photos site/icons/make-progress-icon.png" alt="Make progress">
-                <h3 class="progress__subject">Make Progress</h3>
-                <p class="progress__suptitle">with opening plans</p>
-
-                <a class="progress__button" href="#">Buy Plan</a>
+            <div class="power__pictures-wrapper">
+                <img class="power__illustration" src="/src/main/resources/images/illustration/mean-dark.png" alt="Photo of a man">
+                <img class="power__triangle" src="/src/main/resources/images/icons/triangle-icon.png" alt="Triangle">
+                <img class="power__cubeTwo" src="/src/main/resources/images/icons/cube-icon.svg" alt="Cube">
             </div>
-
         </div>
     </section>
 
-    <section class="build container">
+    <!-- <section class="build container">
         <div class="build__pictures-wrapper">
-            <img class="build__pictures" src="photos site/illustration/phone-foto.png" alt="Phone illustration">
+            <img class="build__pictures" src="/src/main/resources/images/illustration/phone-foto.png" alt="Phone illustration">
         </div>
 
         <div class="build__content">
@@ -2122,25 +2067,25 @@
 
         <ul class="wedo__list">
             <li class="wedo__item">
-                <img class="wedo__icon" src="photos site/icons/grow-trafic-icon.png" width="73" height="66" alt="Grow your traffic">
+                <img class="wedo__icon" src="/src/main/resources/images/icons/grow-trafic-icon.png" width="73" height="66" alt="Grow your traffic">
                 <h3 class="wedo__item-subject">Grow your traffic</h3>
                 <p class="wedo__suptitle">We always help your company to grow with us.</p>
             </li>
 
             <li class="wedo__item">
-                <img class="wedo__icon" src="photos site/icons/content-icon.png" width="73" height="66" alt="Grow your traffic">
+                <img class="wedo__icon" src="/src/main/resources/images/icons/content-icon.png" width="73" height="66" alt="Grow your traffic">
                 <h3 class="wedo__item-subject">Content for sales</h3>
                 <p class="wedo__suptitle">Every company that we handel. We always content more sales.</p>
             </li>
 
             <li class="wedo__item">
-                <img class="wedo__icon" src="photos site/icons/reporting-icon.png" width="73" height="66" alt="Grow your traffic">
+                <img class="wedo__icon" src="/src/main/resources/images/icons/reporting-icon.png" width="73" height="66" alt="Grow your traffic">
                 <h3 class="wedo__item-subject">Reporting &amp; analytics</h3>
                 <p class="wedo__suptitle">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
             </li>
 
             <li class="wedo__item">
-                <img class="wedo__icon" src="photos site/icons/better-icon.png" width="73" height="66" alt="Grow your traffic">
+                <img class="wedo__icon" src="/src/main/resources/images/icons/better-icon.png" width="73" height="66" alt="Grow your traffic">
                 <h3 class="wedo__item-subject">Better Conversion</h3>
                 <p class="wedo__suptitle">We always help your company to grow with us.</p>
             </li>
@@ -2149,9 +2094,9 @@
 
     <section class="product container">
         <div class="product__pictures">
-            <img class="product__foto" src="photos site/illustration/sofa-foto.png" alt="Product foto">
+            <img class="product__foto" src="/src/main/resources/images/illustration/sofa-foto.png" alt="Product foto">
             <div class="product__sales">
-                <img class="sales__icon" src="photos site/icons/semicircle.png" width="138" height="138" alt="semicircle icon">
+                <img class="sales__icon" src="/src/main/resources/images/icons/semicircle.png" width="138" height="138" alt="semicircle icon">
                 <p class="sales__count">28</p>
                 <p class="sales__info">Total sales</p>
             </div>
@@ -2184,14 +2129,14 @@
     </section>
 
     <section class="out-perfom container">
-        <div class="section-header section-header__out-perfom">
-            <p class="section-header__suptitle out-perfom__suptitle">CREATIVE PROCESS</p>
-            <h2 class="section-header__subject out-perfom__subject">Know your ads <br> inside &amp; out-perform</h2>
-            <p class="section-header__subtitle out-perfom__suptitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-        </div>
-        <div class="out-perfom__pictures-wrapper">
-            <img class="out-perfom__foto" src="photos site/illustration/mean-foto-2.png" alt="Man holding a tablet">
-        </div>
+            <div class="section-header section-header__out-perfom">
+                <p class="section-header__suptitle out-perfom__suptitle">CREATIVE PROCESS</p>
+                <h2 class="section-header__subject out-perfom__subject">Know your ads <br> inside &amp; out-perform</h2>
+                <p class="section-header__subtitle out-perfom__suptitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+            </div>
+            <div class="out-perfom__pictures-wrapper">
+                <img class="out-perfom__foto" src="/src/main/resources/images/illustration/mean-foto-2.png" alt="Man holding a tablet">
+            </div>
     </section>
 
     <section class="contact container">
@@ -2199,11 +2144,7 @@
         <p class="contact__suptitle">More than 50,000+ companies trusted our business</p>
 
         <form class="contact__forma forma" action="#" method="post">
-            <div class="input__wrapper">
-                <input class="contact__input forma__input" type="text" placeholder="Type your messages..">
-            </div>
-
-            <button class="forma__button button" type="button">Get Started</button>
+            <button class="forma__button button" type="button" onclick="window.location.href='./regMain.html'">Начать работу</button>
         </form>
     </section>
 </main>
@@ -2213,9 +2154,8 @@
         <p class="float-end mb-1">
             <a href="#">Back to top</a>
         </p>
-        <p class="mb-1">Album example is © Bootstrap, but please download and customize it for yourself!</p>
-        <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.3/getting-started/introduction/">getting started guide</a>.</p>
-    </div>
+        <p class="mb-1">Album example is © Bootstrap, but please download and customize it for yourself! New to Bootstrap?</p>
+    </div> -->
 </footer>
 <script src="perehod.js"></script>
 </body>
