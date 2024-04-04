@@ -1,12 +1,15 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ru">
 <head>
     <title>WebP</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
 <style>
+/* POPPINS FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
     *{
         padding: 0;
         margin: 0;
@@ -26,9 +29,6 @@
         font-size: 100%;
         line-height: 1;
         font-size: 16px;
-        -ms-text-size-adjust: 100%;
-        -moz-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
     }
     input,button,textarea{font-family:inherit;}
     input::-ms-clear{display: none;}
@@ -68,8 +68,90 @@
         background-color: #0E0E2C;
         overflow-x: hidden;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Poppins', sans-serif;
     }
+
+    .buttontry{
+        padding: 14px 33px;
+        background-color: #FFBE0B;
+        border: 2px solid #FFBE0B;
+        border-radius: 10px;
+        color: #0E0E2C;
+        font-weight: 700;
+        font-size: 16px;
+        transition: all .2s linear;
+    }
+    .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: rgba(39, 39, 39, 0.4);
+}
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    overflow: hidden;
+    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    z-index: 100;
+}
+.nav-logo p{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.nav-menu ul{
+    display: flex;
+}
+.nav-menu ul li{
+    list-style-type: none;
+}
+
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+@media (max-width:1200px){
+    .nav-menu ul li .link{
+        font-size: 12px;
+    }
+}
+.link:hover, .active{
+    border-bottom: 2px solid #fff;
+}
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+#registerBtn{
+    margin-left: 15px;
+}
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+}
+.btn.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+.nav-menu-btn{
+    display: none;
+}
 
     ::-webkit-scrollbar {
         width: 15px; /* ширина для вертикального скролла */
@@ -100,130 +182,12 @@
         align-items: center;
 
         width: 100%;
-        max-width: 1200px;
+        max-width: 2000px;
         margin: 0 auto 100px auto;
         padding: 35px 15px 0 15px;
     }
 
-    .close__button{
-        display: none;
-    }
-
-    /*Burger*/
-    .burger-menu{
-        width: 25px;
-        height: 25px;
-        display: none;
-    }
-
-    .burger-button{
-        position: relative;
-        width: 25px;
-        height: 30px;
-    }
-
-    .burger-button:before, .burger-button:after{
-        content: "";
-        position: absolute;
-        width: 25px;
-        height: 2px;
-        background-color: #FFBE0B;
-    }
-
-    .burger-button:after{
-        bottom: 20%;
-        left: 0;
-    }
-
-    .burger-button span{
-        position: absolute;
-        width: 25px;
-        height: 2px;
-        top: 48%;
-        left: 0;
-        background-color: #FFBE0B;
-    }
-
-    .burger-button:before{
-        top: 20%;
-        left: 0;
-    }
-
-    .burger-active{
-        display: block;
-    }
-
-
-
-    /*Navigation*/
-    .navigation{
-        display: flex;
-        align-items: center;
-    }
-
-    .navigation__list{
-        display: flex;
-        margin-right: 110px;
-    }
-
-    .navigation__item:not(:last-child){
-        margin-right: 55px;
-    }
-
-    .navigation__link{
-        position: relative;
-        font-size: 16px;
-        font-weight: 400;
-        transition: color .1s linear;
-    }
-
-    .navigation__link:before{
-        content: "";
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        top: -50%;
-        left: 10%;
-        background-color: #d1a625;
-        z-index: 1;
-        border-radius: 100px;
-        filter: blur(25px);
-        opacity: 0;
-        transition: opacity .2s linear;
-    }
-
-    .navigation__link:hover:before{
-        opacity: 1;
-    }
-
-    /*Button*/
-    .button{
-        padding: 14px 33px;
-        background-color: #FFBE0B;
-        border: 2px solid #FFBE0B;
-        border-radius: 10px;
-        color: #0E0E2C;
-        font-weight: 700;
-        font-size: 16px;
-        transition: all .2s linear;
-    }
-
-    .button:hover{
-        background-color: transparent;
-        color: #FFBE0B;
-        box-shadow: 0 0 20px #FFBE0B;
-    }
-
-    .user__sign-button{
-        background-color: transparent;
-        color: #FFBE0B;
-    }
-
-    .user__sign-button:hover{
-        background-color: #FFBE0B;
-        color: #0E0E2C;
-    }
-
+    
 
     /*Main*/
     .main{
@@ -953,11 +917,6 @@
             z-index: -1;
         }
 
-        .section-header__suptitle{
-            backdrop-filter: blur(10px);
-            background-color: rgba(23, 38, 86, 0.5)
-        }
-
         .section-header{
             z-index: 1;
         }
@@ -1176,7 +1135,7 @@
 
             background-color: rgba(23, 38, 86, 0.5);
             border-radius: 0px 0px 30px 0px;
-            backdrop-filter: blur(10px);
+            
         }
 
         .header-navigation-active{
@@ -1260,6 +1219,7 @@
         /*Header*/
         .header{
             margin-bottom: 70px;
+            font-size:30px;
         }
 
         .section-header__subject {
@@ -1972,39 +1932,26 @@
         }
     }
 
-</style>
+</style> 
 <header class="header">
-    <a class="header__logo logo">
-        <img src="/src/main/resources/images/icons/Remove-bg.ai_1710442664805.png" width="150" height="110" alt="Web logo">
-    </a>
-
-    <div class="burger-menu">
-        <div class="burger-button">
-            <span></span>
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>LOGO .</p>
         </div>
-    </div>
-
-    <nav class="header-navigation navigation">
-        <ul class="header-navigation__list navigation__list">
-            <li class="header-navigation__item navigation__item">
-                <a class="header-navigation__link navigation__link" href="#">Главная</a>
-            </li>
-
-            <li class="header-navigation__item navigation__item">
-                <a class="header-navigation__link navigation__link" href="#">Последние работы</a>
-            </li>
-
-            <li class="header-navigation__item navigation__item">
-                <a class="header-navigation__link navigation__link" href="#">Добавить проект</a>
-            </li>
-
-            <li class="header-navigation__item navigation__item">
-                <a class="header-navigation__link navigation__link" href="#">Поддержка</a>
-            </li>
-        </ul>
-
-        <div class="header-user">
-            <button class="user__sign-button button" type="button" onclick="window.location.href='./regMain.html'">Регистрация</button>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="./home.html" class="link active">Home</a></li>
+                <li><a href="./works.html" class="link">Blog</a></li>
+                <li><a href="#" class="link">Services</a></li>
+                <li><a href="#" class="link">About</a></li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginBtn" onclick="window.location.href='./regMain.html'" >Sign In</button>
+            <button class="btn" id="registerBtn" onclick="window.location.href='./regMain.html'">Sign Up</button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
         </div>
     </nav>
 </header>
@@ -2020,7 +1967,7 @@
 
                     <p>Присоединяйтесь к нам и начните работу прямо сейчас!</p>
                     <form class="power__forma forma" action="#" method="post">
-                        <button class="forma__button button" type="button" onclick="window.location.href='./regMain.html'">Попробовать</button>
+                        <button class="forma__button buttontry" type="button" onclick="window.location.href='./regMain.html'">Попробовать</button>
                     </form>
                 </div>
             </div>
@@ -2033,26 +1980,25 @@
         </div>
     </section>
 
-    <!-- <section class="build container">
+     <section class="build container">
         <div class="build__pictures-wrapper">
             <img class="build__pictures" src="/src/main/resources/images/illustration/phone-foto.png" alt="Phone illustration">
         </div>
 
         <div class="build__content">
             <div class="section-header build__section">
-                <p class="section-header__suptitle build__suptitle">SERVICES WE PROVIDES</p>
-                <h2 class="section-header__subject build__subject">Build on both: Google web stories and AMP website format</h2>
+                <h2 class="section-header__subject build__subject">Создайте свое портфолио мечты вместе с нами!</h2>
             </div>
 
             <ul class="statistic__list">
                 <li class="statistic__item">
-                    <div class="statistic-count">5660</div>
-                    <div class="statistic-info">Product sale per day working and sales</div>
+                    <div class="statistic-count">1000+</div>
+                    <div class="statistic-info">Портфолио создано на нашем сайте.</div>
                 </li>
 
                 <li class="statistic__item">
-                    <div class="statistic-count"><span>4M+</span></div>
-                    <div class="statistic-info">Downloaded saled in your good.</div>
+                    <div class="statistic-count"><span>1M+</span></div>
+                    <div class="statistic-info">Просмотров еженедельно на сайте.</div>
                 </li>
             </ul>
         </div>
@@ -2060,102 +2006,46 @@
 
     <section class="wedo container">
         <div class="section-header section-header-wedo">
-            <p class="section-header__suptitle wedo__suptitle">WHAT WE DO</p>
-            <h2 class="section-header__subject wedo__subject">Our creative process for your business</h2>
-            <p class="section-header__subtitle wedo__suptitle">As our motto, we always provide the best service especially for you and your company by growing your company to be better.</p>
+            <p class="section-header__suptitle wedo__suptitle">Что мы делаем</p>
+            <h2 class="section-header__subject wedo__subject">Наши креативные решения для вашего портфолио</h2>
+           
         </div>
 
         <ul class="wedo__list">
             <li class="wedo__item">
                 <img class="wedo__icon" src="/src/main/resources/images/icons/grow-trafic-icon.png" width="73" height="66" alt="Grow your traffic">
-                <h3 class="wedo__item-subject">Grow your traffic</h3>
-                <p class="wedo__suptitle">We always help your company to grow with us.</p>
+                <h3 class="wedo__item-subject">Увеличьте просмотры</h3>
+                <p class="wedo__suptitle">Мы всегда стараемся выкладывать новые работы в рекомендации</p>
             </li>
 
             <li class="wedo__item">
                 <img class="wedo__icon" src="/src/main/resources/images/icons/content-icon.png" width="73" height="66" alt="Grow your traffic">
-                <h3 class="wedo__item-subject">Content for sales</h3>
-                <p class="wedo__suptitle">Every company that we handel. We always content more sales.</p>
+                <h3 class="wedo__item-subject">Находите заказы</h3>
+                <p class="wedo__suptitle">На нашем сайте присутствуют различные компании, может именно у вас они возьмут следующий заказ</p>
             </li>
 
             <li class="wedo__item">
                 <img class="wedo__icon" src="/src/main/resources/images/icons/reporting-icon.png" width="73" height="66" alt="Grow your traffic">
-                <h3 class="wedo__item-subject">Reporting &amp; analytics</h3>
-                <p class="wedo__suptitle">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                <h3 class="wedo__item-subject">Аналитика</h3>
+                <p class="wedo__suptitle">Отслеживайте количество просмотров на вашем проекте</p>
             </li>
 
             <li class="wedo__item">
                 <img class="wedo__icon" src="/src/main/resources/images/icons/better-icon.png" width="73" height="66" alt="Grow your traffic">
-                <h3 class="wedo__item-subject">Better Conversion</h3>
-                <p class="wedo__suptitle">We always help your company to grow with us.</p>
+                <h3 class="wedo__item-subject">Оригинальность</h3>
+                <p class="wedo__suptitle">Мы следим за тем, чтобы никто не присваивал себе чужой контент</p>
             </li>
         </ul>
     </section>
 
-    <section class="product container">
-        <div class="product__pictures">
-            <img class="product__foto" src="/src/main/resources/images/illustration/sofa-foto.png" alt="Product foto">
-            <div class="product__sales">
-                <img class="sales__icon" src="/src/main/resources/images/icons/semicircle.png" width="138" height="138" alt="semicircle icon">
-                <p class="sales__count">28</p>
-                <p class="sales__info">Total sales</p>
-            </div>
-        </div>
 
-        <div class="product__content">
-            <div class="section-header section-header-product">
-                <p class="section-header__suptitle product__suptitle">OUR PRODUCT STORIES</p>
-                <h2 class="section-header__subject product__subject">Why product stories? Learn more</h2>
-            </div>
-
-            <ul class="product-avaliable__list">
-                <li class="product-avaliable__item">
-                    <h3 class="product-avaliable__subject">SEO optimized, high Google work</h3>
-                    <p class="product-avaliable__suptitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </li>
-
-                <li class="product-avaliable__item">
-                    <h3 class="product-avaliable__subject">Fast loading, low bounce rates</h3>
-                    <p class="product-avaliable__suptitle">It is a long established fact that a reader will be distracted by the readable content</p>
-                </li>
-
-                <li class="product-avaliable__item">
-                    <h3 class="product-avaliable__subject">SEO optimized, high Google work</h3>
-                    <p class="product-avaliable__suptitle">It is a long established fact that a reader will be distracted by the readable content</p>
-                </li>
-
-            </ul>
-        </div>
-    </section>
-
-    <section class="out-perfom container">
-            <div class="section-header section-header__out-perfom">
-                <p class="section-header__suptitle out-perfom__suptitle">CREATIVE PROCESS</p>
-                <h2 class="section-header__subject out-perfom__subject">Know your ads <br> inside &amp; out-perform</h2>
-                <p class="section-header__subtitle out-perfom__suptitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-            </div>
-            <div class="out-perfom__pictures-wrapper">
-                <img class="out-perfom__foto" src="/src/main/resources/images/illustration/mean-foto-2.png" alt="Man holding a tablet">
-            </div>
-    </section>
-
-    <section class="contact container">
-        <h2 class="contact__subject">Contact with us.</h2>
-        <p class="contact__suptitle">More than 50,000+ companies trusted our business</p>
-
-        <form class="contact__forma forma" action="#" method="post">
-            <button class="forma__button button" type="button" onclick="window.location.href='./regMain.html'">Начать работу</button>
-        </form>
-    </section>
-</main>
-</main>
 <footer class="text-body-secondary py-5">
     <div class="container">
         <p class="float-end mb-1">
-            <a href="#">Back to top</a>
+            <a href="#">Вернуться наверх</a>
         </p>
         <p class="mb-1">Album example is © Bootstrap, but please download and customize it for yourself! New to Bootstrap?</p>
-    </div> -->
+    </div>
 </footer>
 <script src="perehod.js"></script>
 </body>
